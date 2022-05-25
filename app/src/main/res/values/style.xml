@@ -3,7 +3,7 @@
     <style name="text_info" parent="Theme.ChallengeGameKertasGuntingBatu">
         <item name="android:text">@string/input_hand</item>
         <item name="android:textSize">14sp</item>
-        <item name="fontFamily">@font/comicneue-regular</item>
+        <item name="fontFamily">@font/comicneueregular</item>
         <item name="android:textColor">#A668B0</item>
     </style>
 
