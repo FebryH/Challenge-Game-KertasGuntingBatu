@@ -11,8 +11,9 @@
         android:label="Kertas Gunting Batu"
         android:roundIcon="@mipmap/ic_launcher_gamelogo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ChallengeGameKertasGuntingBatu"
+        android:theme="@style/Theme.ChallengeGameKertasGuntingBatu.noAction"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
