@@ -9,12 +9,12 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var handRock1: ImageView
     private lateinit var handPaper1: ImageView
     private lateinit var handScissor1: ImageView
-    private lateinit var handRock2: ImageView
+    private lateinit var handRock1: ImageView
     private lateinit var handPaper2: ImageView
     private lateinit var handScissor2: ImageView
+    private lateinit var handRock2: ImageView
     private lateinit var viewResult: ImageView
     private lateinit var textRefresh: TextView
     private lateinit var logPlayer: String
@@ -26,19 +26,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        handRock1 = findViewById(R.id.iv_rock_p1)
         handPaper1 = findViewById(R.id.iv_paper_p1)
         handScissor1 = findViewById(R.id.iv_scissor_p1)
-        handRock2 = findViewById(R.id.iv_rock_p2)
+        handRock1 = findViewById(R.id.iv_rock_p1)
         handPaper2 = findViewById(R.id.iv_paper_p2)
         handScissor2 = findViewById(R.id.iv_scissor_p2)
+        handRock2 = findViewById(R.id.iv_rock_p2)
         viewResult = findViewById(R.id.iv_result)
         textRefresh = findViewById(R.id.tv_message)
         val ivRefresh = findViewById<ImageView>(R.id.iv_refresh)
 
-        setOnClick(handRock1, 1)
-        setOnClick(handPaper1, 2)
-        setOnClick(handScissor1, 3)
+        setOnClick(handPaper1, 1)
+        setOnClick(handScissor1, 2)
+        setOnClick(handRock1, 3)
 
         ivRefresh.setOnClickListener {
             clearView()
@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun isHandEnabled(enable: Boolean) {
 
-        handRock1.isEnabled = enable
         handPaper1.isEnabled = enable
         handScissor1.isEnabled = enable
+        handRock1.isEnabled = enable
     }
 
     private fun setPlayer1(view: ImageView, handId: Int) {
@@ -75,9 +75,9 @@ class MainActivity : AppCompatActivity() {
 
         player2.handId = (1..3).random()
         when (player2.handId) {
-            1 -> setHand(handRock2, 1, true)
-            2 -> setHand(handPaper2, 2, true)
-            3 -> setHand(handScissor2, 3, true)
+            1 -> setHand(handPaper2, 1, true)
+            2 -> setHand(handScissor2, 2, true)
+            3 -> setHand(handRock2, 3, true)
         }
         logPlayer = player2.showLogPlayer()
         logD(logPlayer)
@@ -95,9 +95,9 @@ class MainActivity : AppCompatActivity() {
     private fun setHandImage(handImage: Int): Int {
 
         return when (handImage) {
-            1 -> R.drawable.ic_hand_rock
-            2 -> R.drawable.ic_hand_paper
-            3 -> R.drawable.ic_hand_scissor
+            1 -> R.drawable.ic_hand_paper
+            2 -> R.drawable.ic_hand_scissor
+            3 -> R.drawable.ic_hand_rock
             else -> 0
         }
     }
@@ -154,16 +154,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearViewPlayer1() {
 
-        setHand(handRock1, 1, false)
-        setHand(handPaper1, 2, false)
-        setHand(handScissor1, 3, false)
+        setHand(handPaper1, 1, false)
+        setHand(handScissor1, 2, false)
+        setHand(handRock1, 3, false)
     }
 
     private fun clearViewPlayer2() {
 
-        setHand(handRock2, 1, false)
-        setHand(handPaper2, 2, false)
-        setHand(handScissor2, 3, false)
+        setHand(handPaper2, 1, false)
+        setHand(handScissor2, 2, false)
+        setHand(handRock2, 3, false)
     }
 
     private fun logD(message: String) {

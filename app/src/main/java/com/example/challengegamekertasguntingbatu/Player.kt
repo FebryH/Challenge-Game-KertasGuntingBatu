@@ -14,9 +14,9 @@ class Player(private var name: String) {
     private fun getHandName(): String {
 
         val handName = when (handId) {
-            1 -> "Rock"
-            2 -> "Paper"
-            3 -> "Scissor"
+            1 -> "Paper"
+            2 -> "Scissor"
+            3 -> "Rock"
             else -> "None"
         }
         return handName
